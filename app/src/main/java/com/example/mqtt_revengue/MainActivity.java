@@ -3,10 +3,10 @@ package com.example.mqtt_revengue;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -18,6 +18,10 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import java.text.DecimalFormat;
+
+import pl.pawelkleczkowski.customgauge.CustomGauge;
+
 public class MainActivity extends AppCompatActivity
 {
 
@@ -27,10 +31,20 @@ public class MainActivity extends AppCompatActivity
 
     MqttAndroidClient client;
 
+    // Textos
+
     public TextView tv1;
     public TextView tv2;
     public TextView tv3;
     public TextView tv4;
+
+    //gauges
+
+    CustomGauge gauge1;
+    CustomGauge gauge2;
+    CustomGauge gauge3;
+    CustomGauge gauge4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,27 +57,32 @@ public class MainActivity extends AppCompatActivity
         tv3 = (TextView)findViewById(R.id.tv3);
         tv4 = (TextView)findViewById(R.id.tv4);
 
+        gauge1 = (CustomGauge)findViewById(R.id.gauge1);
+        gauge2 = (CustomGauge)findViewById(R.id.gauge2);
+        gauge3 = (CustomGauge)findViewById(R.id.gauge3);
+        gauge4 = (CustomGauge)findViewById(R.id.gauge4);
+
 
         String clientID = MqttClient.generateClientId();
         client = new MqttAndroidClient(getApplicationContext(), MQTTHOST, clientID);
         final MqttConnectOptions options = new MqttConnectOptions();
 
-        //options.setUserName(USERNAME);
-        //options.setPassword(PASSWORD.toCharArray());
+        //options.setUserName(USERNAME); //unused
+        //options.setPassword(PASSWORD.toCharArray()); //unused
 
         try {
             IMqttToken token = client.connect(options);
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    // We are connected
-                    Toast.makeText(getBaseContext(), "Sea ha conectado", Toast.LENGTH_LONG).show();
+                    // Estamos Conecatados
+                    Toast.makeText(getBaseContext(), "Sea ha conectado.", Toast.LENGTH_LONG).show();
                     subscribetopics();
                 }
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    // Something went wrong e.g. connection timeout or firewall problems
-                    Toast.makeText(getBaseContext(), "pico ctm", Toast.LENGTH_LONG).show();
+                    // SSi pasan problemas
+                    Toast.makeText(getBaseContext(), "Existe un error.", Toast.LENGTH_LONG).show();
                 }
             });
         } catch (MqttException e) {
@@ -77,27 +96,43 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                // aqui llegan los mensajes
-                if(topic.matches("solos2_temperatura"))
-                {
+
+                // gauges
+
+                if(topic.matches("solos2_humedad")){
+
                     tv1.setText(new String(message.getPayload()));
+
+                    //gauge1.setValue(Integer.parseInt(new String(message.getPayload())));
+
+                    String SCA = (String) tv1.getText();
+                    int cantidadA = 2;
+                    int m = Math.max(0,SCA.length()-cantidadA);
+                    gauge1.setValue(Integer.parseInt(String.valueOf(m)));
+
                 }
 
-                if(topic.matches("solos2_humedad"))
-                {
+                if(topic.matches("solos2_temperatura")){
                     tv2.setText(new String(message.getPayload()));
+
+                    //gauge2.setValue(Integer.parseInt(new String(message.getPayload())));
+
+                    String SCB = (String) tv2.getText();
+                    int cantidadB = 2;
+                    int m = Math.max(0,SCB.length()-cantidadB);
+                    gauge2.setValue(Integer.parseInt(String.valueOf(m)));
+
                 }
 
-                if(topic.matches("solos2_higrometro"))
-                {
+                if(topic.matches("solos2_higrometro")){
+                    gauge3.setValue(Integer.parseInt(new String(message.getPayload())));
                     tv3.setText(new String(message.getPayload()));
                 }
 
-                if(topic.matches("solos2_luz"))
-                {
+                if(topic.matches("solos2_luz")){
+                    gauge4.setValue(Integer.parseInt(new String(message.getPayload())));
                     tv4.setText(new String(message.getPayload()));
                 }
-
             }
 
             @Override
