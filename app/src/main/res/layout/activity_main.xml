@@ -8,8 +8,8 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
-        android:layout_width="333dp"
-        android:layout_height="488dp"
+        android:layout_width="130dp"
+        android:layout_height="457dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
@@ -48,27 +48,45 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <pl.pawelkleczkowski.customgauge.CustomGauge
-                        android:id="@+id/gauge1"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center_horizontal"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="10dp"
-                        app:gaugeEndValue="10"
-                        app:gaugePointEndColor="@android:color/holo_orange_dark"
-                        app:gaugePointStartColor="@android:color/holo_red_dark"
-                        app:gaugeStartAngle="90"
-                        app:gaugeStartValue="0"
-                        app:gaugeStrokeCap="ROUND"
-                        app:gaugeStrokeColor="@android:color/holo_blue_bright"
-                        app:gaugeStrokeWidth="10dp"
-                        app:gaugeSweepAngle="270" />
-
                     // Valor gauge 1
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp">
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="27dp"
+                            android:layout_height="21dp"
+                            app:srcCompat="@drawable/humedadpoca" />
+
+                        <pl.pawelkleczkowski.customgauge.CustomGauge
+                            android:id="@+id/gauge1"
+                            android:layout_width="75dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            app:gaugeEndValue="10"
+                            app:gaugePointEndColor="@android:color/holo_orange_dark"
+                            app:gaugePointStartColor="@android:color/holo_red_dark"
+                            app:gaugeStartAngle="90"
+                            app:gaugeStartValue="0"
+                            app:gaugeStrokeCap="ROUND"
+                            app:gaugeStrokeColor="@android:color/holo_blue_bright"
+                            app:gaugeStrokeWidth="10dp"
+                            app:gaugeSweepAngle="270" />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="27dp"
+                            android:layout_height="21dp"
+                            app:srcCompat="@drawable/humedadmucha" />
+
+                    </TableRow>
 
                     <TextView
                         android:id="@+id/tv1"
@@ -104,27 +122,45 @@
 
                     // Gauge 2
 
-                    <pl.pawelkleczkowski.customgauge.CustomGauge
-                        android:id="@+id/gauge2"
-                        android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center_horizontal"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="10dp"
-                        app:gaugeEndValue="15"
-                        app:gaugePointEndColor="@android:color/holo_red_dark"
-                        app:gaugePointStartColor="@android:color/holo_blue_bright"
-                        app:gaugeStartAngle="90"
-                        app:gaugeStartValue="0"
-                        app:gaugeStrokeCap="ROUND"
-                        app:gaugeStrokeColor="@android:color/holo_orange_light"
-                        app:gaugeStrokeWidth="10dp"
-                        app:gaugeSweepAngle="270" />
-
                     //valor gauga 2
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="63dp">
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="27dp"
+                            android:layout_height="21dp"
+                            app:srcCompat="@drawable/termometrofrio" />
+
+                        <pl.pawelkleczkowski.customgauge.CustomGauge
+                            android:id="@+id/gauge2"
+                            android:layout_width="75dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            app:gaugeEndValue="15"
+                            app:gaugePointEndColor="@android:color/holo_red_dark"
+                            app:gaugePointStartColor="@android:color/holo_blue_bright"
+                            app:gaugeStartAngle="90"
+                            app:gaugeStartValue="0"
+                            app:gaugeStrokeCap="ROUND"
+                            app:gaugeStrokeColor="@android:color/holo_orange_light"
+                            app:gaugeStrokeWidth="10dp"
+                            app:gaugeSweepAngle="270" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="27dp"
+                            android:layout_height="21dp"
+                            app:srcCompat="@drawable/termometrocaliente" />
+
+                    </TableRow>
 
                     <TextView
                         android:id="@+id/tv2"
@@ -162,26 +198,44 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <pl.pawelkleczkowski.customgauge.CustomGauge
-                        android:id="@+id/gauge3"
+                    <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="75dp"
-                        android:layout_below="@+id/gauge2"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center_horizontal"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="10dp"
-                        app:gaugeEndValue="1023"
-                        app:gaugePointEndColor="@android:color/holo_red_dark"
-                        app:gaugePointStartColor="@android:color/holo_blue_light"
-                        app:gaugeStartAngle="135"
-                        app:gaugeStartValue="200"
-                        app:gaugeStrokeCap="ROUND"
-                        app:gaugeStrokeColor="#AF660C"
-                        app:gaugeStrokeWidth="10dp"
-                        app:gaugeSweepAngle="270" />
+                        android:layout_height="62dp">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="27dp"
+                            android:layout_height="21dp"
+                            app:srcCompat="@drawable/hojaverde" />
+
+                        <pl.pawelkleczkowski.customgauge.CustomGauge
+                            android:id="@+id/gauge3"
+                            android:layout_width="76dp"
+                            android:layout_height="72dp"
+                            android:layout_below="@+id/gauge2"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            app:gaugeEndValue="1023"
+                            app:gaugePointEndColor="@android:color/holo_red_dark"
+                            app:gaugePointStartColor="@android:color/holo_blue_light"
+                            app:gaugeStartAngle="135"
+                            app:gaugeStartValue="200"
+                            app:gaugeStrokeCap="ROUND"
+                            app:gaugeStrokeColor="#AF660C"
+                            app:gaugeStrokeWidth="10dp"
+                            app:gaugeSweepAngle="270" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="27dp"
+                            android:layout_height="21dp"
+                            app:srcCompat="@drawable/hojaseca" />
+
+                    </TableRow>
 
                     <TextView
                         android:id="@+id/tv3"
@@ -191,17 +245,18 @@
                         android:hint="Higómetro"
                         android:textColor="@android:color/background_dark"
                         android:textSize="12sp" />
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="116dp">
+                android:layout_height="129dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="128dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -213,31 +268,49 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <pl.pawelkleczkowski.customgauge.CustomGauge
-                        android:id="@+id/gauge4"
+                    <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="69dp"
-                        android:layout_below="@+id/gauge2"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center_horizontal"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="10dp"
-                        app:gaugeEndValue="1023"
-                        app:gaugePointEndColor="#FFB700"
-                        app:gaugePointStartColor="@android:color/holo_purple"
-                        app:gaugeStartAngle="135"
-                        app:gaugeStartValue="200"
-                        app:gaugeStrokeCap="ROUND"
-                        app:gaugeStrokeColor="#F3EE0A"
-                        app:gaugeStrokeWidth="10dp"
-                        app:gaugeSweepAngle="270" />
+                        android:layout_height="61dp">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="27dp"
+                            android:layout_height="21dp"
+                            app:srcCompat="@drawable/luna" />
+
+                        <pl.pawelkleczkowski.customgauge.CustomGauge
+                            android:id="@+id/gauge4"
+                            android:layout_width="75dp"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/gauge2"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            app:gaugeEndValue="1023"
+                            app:gaugePointEndColor="#FF5100"
+                            app:gaugePointStartColor="@android:color/primary_text_light"
+                            app:gaugeStartAngle="135"
+                            app:gaugeStartValue="200"
+                            app:gaugeStrokeCap="ROUND"
+                            app:gaugeStrokeColor="#F3EE0A"
+                            app:gaugeStrokeWidth="10dp"
+                            app:gaugeSweepAngle="270" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="27dp"
+                            android:layout_height="21dp"
+                            app:srcCompat="@drawable/sol" />
+
+                    </TableRow>
 
                     <TextView
                         android:id="@+id/tv4"
                         android:layout_width="match_parent"
-                        android:layout_height="74dp"
+                        android:layout_height="16dp"
                         android:gravity="center_horizontal"
                         android:hint="Luz"
                         android:textColor="@android:color/background_dark"
