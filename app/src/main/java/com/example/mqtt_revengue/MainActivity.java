@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         tv1 = (TextView)findViewById(R.id.tv1);
-        tv2= (TextView)findViewById(R.id.tv2);
+        tv2 = (TextView)findViewById(R.id.tv2);
         tv3 = (TextView)findViewById(R.id.tv3);
         tv4 = (TextView)findViewById(R.id.tv4);
 
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity
                     //gauge1.setValue(Integer.parseInt(new String(message.getPayload())));
 
                     String SCA = (String) tv1.getText();
-                    int cantidadA = 2;
+                    int cantidadA = 3;
                     int m = Math.max(0,SCA.length()-cantidadA);
                     gauge1.setValue(Integer.parseInt(String.valueOf(m)));
 
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity
                     //gauge2.setValue(Integer.parseInt(new String(message.getPayload())));
 
                     String SCB = (String) tv2.getText();
-                    int cantidadB = 2;
+                    int cantidadB = 3;
                     int m = Math.max(0,SCB.length()-cantidadB);
                     gauge2.setValue(Integer.parseInt(String.valueOf(m)));
 
